@@ -1,3 +1,28 @@
-<p>
-  people works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <ul>
+      <li *ngFor="let person of people">{{ person.name }}</li>
+    </ul>
+  </div>
+</div>
+<button class="btn btn-primary" (click)="getPeople()">Get People</button>
+<hr>
+<div class="row">
+  <div class="col-xs-6">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Name" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="emailAddress">Email Address</label>
+        <input type="email" class="form-control" id="emailAddress" name="emailAddress" placeholder="Email Address" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" ngModel>
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+  </div>
+</div>
